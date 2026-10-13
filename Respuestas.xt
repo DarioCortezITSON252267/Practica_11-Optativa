@@ -1,0 +1,7 @@
+PREGUNTAS
+
+Cambiar la variante en el HTML y anotar que pasa sin tocar el TypeScript
+El boton "Vaciar" paso de contorno azul a fondo rojo sin tocar el TypeScript
+
+Por que el nombre de una etiqueta propia debe llevar guion?
+El guion distingue las etiquetas propias de las nativas, que nunca lo llevan.
