@@ -1,0 +1,48 @@
+RESPUESTAS
+
+
+1. EL COMPILADOR Y EL JSX
+
+¿En qué se convirtió cada etiqueta del JSX?
+En una llamada a función. El nombre de la etiqueta pasa como texto ("div"), los
+atributos como un objeto de props y lo que va adentro como hijos.
+
+Si React es «sólo una biblioteca», ¿quién traduce el JSX?
+El compilador (aquí SWC; en el proyecto, Vite), antes de que el código llegue al
+navegador. React sólo pone las funciones que ese código manda llamar.
+
+
+2. EL PROYECTO CON VITE
+
+El contenedor vacío es <div id="root"></div> en index.html.
+Lo llena src/main.tsx con createRoot(...).render(<App />).
+
+
+3. «HOLA MUNDO» SIN JSX
+
+El título es una sola llamada: createElement('h1', null, 'Hola mundo').
+La tarjeta con tres elementos necesita cuatro llamadas anidadas. Funciona, pero
+es difícil de leer; por eso se usa JSX.
+
+¿Qué hace createRoot y qué hace render?
+createRoot prepara el div#root como el lugar donde React va a trabajar.
+render pinta ahí lo que le pases.
+
+
+4. EL PRIMER COMPONENTE
+
+Error al quitar la prop obligatoria (<Saludo /> sin nombre):
+
+    Property 'nombre' is missing in type '{}' but required in type 'SaludoProps'. ts(2741)
+
+¿Por qué el nombre de un componente empieza con mayúscula?
+Para que el compilador lo distinga de una etiqueta HTML: <saludo> se compila como
+el texto "saludo" y <Saludo> como la función Saludo.
+
+
+5. COMPONENTES DENTRO DE COMPONENTES
+
+TarjetaPerfil usa a Insignia, y App usa tres TarjetaPerfil. La segunda insignia
+(«Por egresar») sólo aparece si el semestre es 7 o mayor.
+
+PENDIENTE: la pregunta de este paso llegó cortada («¿cuál…») y falta contestarla.

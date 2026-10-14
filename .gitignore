@@ -12,6 +12,9 @@ dist
 dist-ssr
 *.local
 
+# Google Drive
+desktop.ini
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

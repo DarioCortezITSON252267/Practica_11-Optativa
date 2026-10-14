@@ -1,3 +1,4 @@
+// Práctica 11: el catálogo con Web Components. Lo carga main.tsx.
 import './boton-app';
 import './tarjeta-producto';
 import type { Producto } from './tipos';
