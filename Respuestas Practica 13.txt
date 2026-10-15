@@ -1,0 +1,28 @@
+RESPUESTAS
+
+1. EL MARCO DE LA PÁGINA
+
+¿Por qué el Layout no necesita saber que es una tienda?
+Porque sólo acomoda lo que le pasan: recibe el encabezado, el pie y el contenido
+ya hechos (por props y children) y los pone en su lugar. No sabe qué hay
+adentro, así que sirve igual para cualquier página.
+
+
+2. EL CATÁLOGO
+
+¿Qué pasa si escribes onClick={onAgregar(producto)} sin la flecha?
+La función se ejecuta al pintar la tarjeta, no al hacer clic. Cada tarjeta se
+agrega sola al carrito, eso vuelve a pintar la página, que la vuelve a llamar...
+y la página se congela en un ciclo infinito. TypeScript ya lo marca antes:
+
+    Type 'void' is not assignable to type 'MouseEventHandler<HTMLButtonElement> | undefined'. ts(2322)
+
+
+3. FILTRAR Y AGREGAR AL CARRITO
+
+¿Por qué con carrito.push(...) el contador no se mueve y no sale ningún error?
+push cambia el mismo arreglo, y React compara el estado viejo con el nuevo por
+referencia: como sigue siendo el mismo arreglo, cree que nada cambió y no vuelve
+a pintar. No hay error porque push sí funciona; React simplemente no se entera.
+(Al cambiar de filtro la página se vuelve a pintar y aparecen de golpe las piezas
+que ya se habían metido.)
